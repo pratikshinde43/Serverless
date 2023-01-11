@@ -1,0 +1,19 @@
+How to live Django website on EC2 ( Deploy Django Application on AWS EC2 | Nginx | Gunicorn | WSGI | Supervisor |HTTPS Request )
+- Create a AWS instance, download key-pair and store it in ssh login.
+- Get your all project in EC2 instance by eg.GIT.
+- Do with steps to run project on EC2 instance.(pip install, requirements etc)
+- In security group: wriyte in bound rule to allow HTTP, HTTPS and custom 8000 port.
+- Install nginx and gunicorn
+- run the rpoject with the help of gunicorn command 
+- To make it permanantly running state will make use of Supervisor or by docker
+    -install Supervisor (apt-get)
+    - create a conf file in /ect/supervisor/conf.d/
+    - creat gunicorn.conf
+    - Test with browser
+- Setup Nginx
+    - got to etc/nginx/sites-available/
+    - conf in default
+        -server name {ip address} {website domain}
+        - and set static path
+- Make site secure
+    - install python3-certbot-nginx
